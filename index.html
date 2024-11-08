@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculadora imc</title>
+</head>
+
+<body >
+    <nav id="barra">
+<ul type="circle">
+<li><a href="#resumoIMC">Oque é IMC</a></li>
+<li><a href="#Calcular">Calcular seu IMC</a></li>
+</ul>
+    </nav>
+        <header>
+            <h1>Índice de Massa Corporal</h1>
+        </header>
+    
+    <section id="container">
+        <section id="resumoIMC">
+
+
+
+
+            <h2>O que o índice de massa corporal fala:</h2>
+            <p>Criado no século 19 pelo matemático Lambert Quételet, o Índice de Massa Corporal, conhecido pela sigla IMC, é um cálculo simples que permite medir se alguém está ou não com o peso ideal. Muitas pessoas buscam descobrir seu IMC quando iniciam uma dieta específica ou uma atividade física.</p>
+            <p>
+                O Índice de Massa Corporal(IMC) é uma das principais ferramentas , adotada inclusive pela Organização
+                Mundial de Saúde (OMS), para calcular o chamado “peso ideal”.
+            </p>
+
+            <p>O IMC é o cálculo que demonstra se o indivíduo está ou não em seu peso ideal. Esse índice é importante
+                para avaliar os riscos de obesidade e desnutrição.</p>
+
+
+
+        </section>
+        <section id="Calcular">
+
+            <form action="#">
+                <label for="altura">Altura :</label>
+                <input type="number" name="altura" id="altura">
+                <label for="altura">Peso (kg):</label>
+                <input type="number" name="peso" id="peso">
+                <br>
+                <button onclick="calcImc()">Calcular IMC </button>
+
+                <p>Seu índice de massa corporal é : <span id="resultado"></span></p>
+
+            </form>
+
+
+        </section>
+    </section>
+
+    <button id="mudarCor" onclick="mudarColor()">
+        <p>mudar cor</p>
+    </button>
+
+
+    <script>
+        function calcImc() {
+            const altura = parseFloat(document.getElementById("altura").value);
+            const peso = parseFloat(document.getElementById("peso").value);
+
+            const resultado = peso / (altura ** 2);
+
+            document.getElementById("resultado").textContent = resultado.toFixed
+                (2)
+
+
+            function mudarColor() {
+                const mudarCor = document.getElementById('mudarCor')
+                mudarCor.style.background === "red" ? "blue" : "red"
+            }
+
+
+        }
+
+
+    </script>
+    <footer>
+        <p>&copy; 2024 </p>
+    </footer>
+
+
+
+
+</body>
+
+</html>
